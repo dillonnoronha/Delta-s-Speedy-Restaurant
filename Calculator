@@ -1,0 +1,47 @@
+# Define a dictionary of food items and their corresponding prices
+menu = {
+    "burger": 5.00,
+    "fries": 2.50,
+    "chicken sandwich": 6.00,
+    "hot dog": 3.50,
+    "grilled cheese": 4.00,
+    "chicken tenders": 5.50,
+    "pizza": 7.00,
+    "mozzarella sticks": 5.00,
+    "mac and cheese": 6.50,
+    "soup": 3.00,
+    "chicken noodle soup": 4.00,
+    "taco salad": 6.50,
+    "chicken Caesar salad": 8.00,
+    "garden salad": 6.00,
+    "BLT sandwich": 5.50,
+    "club sandwich": 7.00,
+    "turkey sandwich": 6.50,
+    "roast beef sandwich": 7.50,
+    "pasta": 8.00,
+    "spaghetti and meatballs": 9.00
+}
+
+# Define a variable to keep track of the total bill
+total_bill = 0
+
+# Iterate over the food items and print their prices
+for item, price in menu.items():
+    print(f"{item}: ${price}")
+
+# Prompt the user for the items they want to order
+order = input("Enter the items you want to order, separated by commas: ")
+
+# Split the user's order into a list of individual items
+order_items = order.split(",")
+
+# Iterate over the items in the user's order and add their prices to the total bill
+for item in order_items:
+    total_bill += menu[item]
+
+# Calculate and add the tip to the total bill
+tip = total_bill * 0.15
+total_bill += tip
+
+# Print the total bill with tip
+print(f"Your total bill with tip is ${total_bill:.2f}.")
